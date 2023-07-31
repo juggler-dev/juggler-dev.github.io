@@ -1,32 +1,18 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 
-import HeaderComponent from "./src/components/HeaderComponent";
-import FooterComponent from "./src/components/FooterComponent";
+import HeaderComponent from "./src/components/Header/HeaderComponent";
+import FooterComponent from "./src/components/Footer/FooterComponent";
+import About from "./src/components/Sections/About";
+import Contact from "./src/components/Sections/Contact";
+
+import ProjectSection from "./src/components/Sections/ProjectSection";
+import SectionHeader from "./src/components/Sections/SectionHeader";
+
+import HomeScreen from "./src/screens/HomeScreen";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <HeaderComponent />
-      <View style={styles.content}>
-        <Text style={styles.contentText}>Content goes here</Text>
-      </View>
-      <FooterComponent />
-    </View>
+    <HomeScreen />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  content: {
-    flex: 1,
-    alignItems: "lsta",
-    justifyContent: "center",
-    backgroundColor: '#393939'
-  },
-  contentText: {
-    fontSize: 20,
-  }
-});
