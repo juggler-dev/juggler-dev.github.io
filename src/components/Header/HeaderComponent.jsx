@@ -1,40 +1,37 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
-function HeaderNavPressable({ pressableLabel }) {
-  return (
-    <Pressable>
-      <Text style={styles.headerNavPressable}>{pressableLabel}</Text>
-    </Pressable>
-  );
-}
+import { useFonts } from "expo-font";
+
+import HeaderNavPressable from "./HeaderNavPressable";
+
+import GlobalStyle from "../../utils/GlobalStyle";
+
 
 export default function HeaderComponent() {
+  const [fontsLoaded] = useFonts({
+    "Quicksand-regular": require("../../../assets/fonts/Quicksand-Regular.ttf"),
+  });
+
+  const styles = StyleSheet.create({
+    container: {
+      height: 50,
+      backgroundColor: "rgba(25, 25, 25, 0.8)",
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      columnGap: 20,
+    },
+    nameText: {
+      fontSize: '36px',
+    },
+  });
+
   return (
     <View style={styles.container}>
-      <Text style={styles.nameText}>Diego Santa Cruz</Text>
-      <HeaderNavPressable pressableLabel={"About"} />
-      <HeaderNavPressable pressableLabel={"Gaming Projects"} />
-      <HeaderNavPressable pressableLabel={"Web Development Projects"} />
+      <Text style={[GlobalStyle.siteHeader, styles.nameText]}>Diego Santa Cruz</Text>
+      <HeaderNavPressable pressableLabel={"About"} globalStyles={GlobalStyle.siteHeader}/>
+      <HeaderNavPressable pressableLabel={"Gaming Projects"} globalStyles={GlobalStyle.siteHeader}/>
+      <HeaderNavPressable pressableLabel={"Web Development Projects"} globalStyles={GlobalStyle.siteHeader}/>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: 50,
-    backgroundColor: "rgba(25, 25, 25, 0.8)",
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    columnGap: 20,
-  },
-  nameText: {
-    color: "dodgerblue",
-    fontSize: 36,
-    textTransform: "uppercase",
-  },
-  headerNavPressable: {
-    color: "dodgerblue",
-    textTransform: "uppercase",
-  }
-});
