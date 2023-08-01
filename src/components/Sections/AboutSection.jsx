@@ -1,6 +1,37 @@
 import { StyleSheet, View, Text, Image } from "react-native";
 
-export default function Aboutme() {
+export default function AboutSection({ globalStyles }) {
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      flexDirection: "column",
+      alignItems: "center",
+      backgroundColor: "white",
+    },
+    imageTextContainer: {
+      flex: 1,
+      flexDirection: "row",
+      paddingVertical: 50,
+      paddingHorizontal: 50,
+      gap: 50,
+      width: "80%",
+    },
+    content: {
+      flex: 1,
+      flexDirection: "column",
+      alignItems: "center",
+      fontSize: "16px",
+    },
+    title: {
+      fontSize: "70px",
+      alignSelf: "flex-start",
+    },
+    message: {
+      fontSize: "20px",
+      textAlign: "justify",
+    },
+  });
+
   return (
     <View className="aboutContainer" style={styles.container}>
       <View style={styles.imageTextContainer}>
@@ -9,8 +40,8 @@ export default function Aboutme() {
           style={{ width: "480px", height: "350px", borderRadius: 16 }}
         ></Image>
         <View className="content" style={styles.content}>
-          <Text style={styles.title}>Hello there!</Text>
-          <Text style={styles.message}>
+          <Text style={[globalStyles, styles.title]}>Hello there!</Text>
+          <Text style={[globalStyles, styles.message]}>
             Hello! I'm Diego, a fullstack developer and game designer/programmer
             from Peru. I'm currently seeking job opportunities and I'd like to
             showcase my work to you. I graduated with distinction from Langara
@@ -28,34 +59,3 @@ export default function Aboutme() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "white",
-  },
-  imageTextContainer: {
-    flex: 1,
-    flexDirection: "row",
-    paddingVertical: 50,
-    paddingHorizontal: 50,
-    gap: 50,
-    width: "80%",
-  },
-  content: {
-    flex: 1,
-    flexDirection: "column",
-    alignItems: "center",
-    fontSize: "16px",
-  },
-  title: {
-    fontSize: "70px",
-    alignSelf: "flex-start"
-  },
-  message: {
-    fontSize: "20px",
-    textAlign: "justify",
-  },
-});

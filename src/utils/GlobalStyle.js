@@ -12,4 +12,7 @@ export default StyleSheet.create({
   title: {
     fontFamily: GENERIC_FONT,
   },
+  body: {
+    fontFamily: GENERIC_FONT,
+  }
 });

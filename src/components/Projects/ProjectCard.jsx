@@ -1,9 +1,16 @@
 import { StyleSheet } from "react-native";
 import { View, Text, ImageBackground } from "react-native-web";
+import { useFonts } from "expo-font";
+
+import GlobalStyle from "../../utils/GlobalStyle";
 
 import Tag from "./Tag";
 
-export default function ProjectCard({ projectTitle, projectContent, projectImageUrl, tags }) {
+export default function ProjectCard({ globalStyle, projectTitle, projectContent, projectImageUrl, tags }) {
+  const [fontsLoaded] = useFonts({
+    "Quicksand-regular": require("../../../assets/fonts/Quicksand-Regular.ttf"),
+  });
+
   const imageUrl = { uri: projectImageUrl };
 
   const styles = StyleSheet.create({
@@ -23,14 +30,22 @@ export default function ProjectCard({ projectTitle, projectContent, projectImage
       borderTopLeftRadius: "16px",
       borderBottomLeftRadius: "16px",
     },
-    tagsDescriptionContainer: {
+    content: {
       flex: 1,
       flexDirection: "column",
       padding: "20px",
+      gap: '20px'
     },
     tagsContainer: {
       display: "flex",
       flexDirection: "row",
+    },
+    title: {
+      fontSize: '24px',
+      color: 'white',
+    },
+    description: {
+      color: "white"
     },
     text: {
       flex: 1,
@@ -47,18 +62,17 @@ export default function ProjectCard({ projectTitle, projectContent, projectImage
       ></ImageBackground>
       <View
         className="tagsDescriptionContainer"
-        style={styles.tagsDescriptionContainer}
+        style={styles.content}
       >
-        <Text>
+        <Text style={[globalStyle, styles.title]}>
           {projectTitle}
         </Text>
         <View className="TagsContainer" style={styles.tagsContainer}>
           {tags.map(x => {
             return <Tag content={x.tagName} color={x.tagColor} />  
           })}
-
         </View>
-        <Text style={{ fontSize: "16px", color: "white" }}>
+        <Text style={[globalStyle, styles.description]}>
           {projectContent}
         </Text>
       </View>
