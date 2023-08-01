@@ -1,16 +1,16 @@
 import { StyleSheet } from "react-native";
 import { View, Text, ImageBackground } from "react-native-web";
-import { useFonts } from "expo-font";
 
 import GlobalStyle from "../../utils/GlobalStyle";
 
 import Tag from "./Tag";
 
-export default function ProjectCard({ globalStyle, projectTitle, projectContent, projectImageUrl, tags }) {
-  const [fontsLoaded] = useFonts({
-    "Quicksand-regular": require("../../../assets/fonts/Quicksand-Regular.ttf"),
-  });
-
+export default function ProjectCard({
+  projectTitle,
+  projectContent,
+  projectImageUrl,
+  tags,
+}) {
   const imageUrl = { uri: projectImageUrl };
 
   const styles = StyleSheet.create({
@@ -34,18 +34,18 @@ export default function ProjectCard({ globalStyle, projectTitle, projectContent,
       flex: 1,
       flexDirection: "column",
       padding: "20px",
-      gap: '20px'
+      gap: "20px",
     },
     tagsContainer: {
       display: "flex",
       flexDirection: "row",
     },
     title: {
-      fontSize: '24px',
-      color: 'white',
+      fontSize: "24px",
+      color: "white",
     },
     description: {
-      color: "white"
+      color: "white",
     },
     text: {
       flex: 1,
@@ -60,21 +60,14 @@ export default function ProjectCard({ globalStyle, projectTitle, projectContent,
         style={styles.projectImage}
         imageStyle={styles.backgroundImage}
       ></ImageBackground>
-      <View
-        className="tagsDescriptionContainer"
-        style={styles.content}
-      >
-        <Text style={[globalStyle, styles.title]}>
-          {projectTitle}
-        </Text>
+      <View className="tagsDescriptionContainer" style={styles.content}>
+        <Text style={[GlobalStyle.generic, styles.title]}>{projectTitle}</Text>
         <View className="TagsContainer" style={styles.tagsContainer}>
-          {tags.map(x => {
-            return <Tag content={x.tagName} color={x.tagColor} />  
+          {tags.map((tag) => {
+            return <Tag content={tag.tagName} color={tag.tagColor} />;
           })}
         </View>
-        <Text style={[globalStyle, styles.description]}>
-          {projectContent}
-        </Text>
+        <Text style={[GlobalStyle.generic, styles.description]}>{projectContent}</Text>
       </View>
     </View>
   );

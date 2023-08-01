@@ -1,12 +1,13 @@
 import { StyleSheet, View, Text, Image } from "react-native";
 
-export default function AboutSection({ globalStyles }) {
+import GlobalStyle from "../../utils/GlobalStyle";
+
+export default function AboutSection() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
       flexDirection: "column",
       alignItems: "center",
-      backgroundColor: "white",
     },
     imageTextContainer: {
       flex: 1,
@@ -25,10 +26,12 @@ export default function AboutSection({ globalStyles }) {
     title: {
       fontSize: "70px",
       alignSelf: "flex-start",
+      color: "white",
     },
     message: {
       fontSize: "20px",
       textAlign: "justify",
+      color: "white",
     },
   });
 
@@ -40,8 +43,8 @@ export default function AboutSection({ globalStyles }) {
           style={{ width: "480px", height: "350px", borderRadius: 16 }}
         ></Image>
         <View className="content" style={styles.content}>
-          <Text style={[globalStyles, styles.title]}>Hello there!</Text>
-          <Text style={[globalStyles, styles.message]}>
+          <Text style={[GlobalStyle.generic, styles.title]}>Hello there!</Text>
+          <Text style={[GlobalStyle.generic, styles.message]}>
             Hello! I'm Diego, a fullstack developer and game designer/programmer
             from Peru. I'm currently seeking job opportunities and I'd like to
             showcase my work to you. I graduated with distinction from Langara

@@ -33,13 +33,13 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <HeaderComponent />
+      <HeaderComponent globalstyles={GlobalStyle.generic}/>
       <View style={styles.content}>
-        <AboutSection globalStyles={GlobalStyle.body} />
-        <ProjectSection name="Web projects" sectionContent={webProjects} />
+        <AboutSection globalStyles={GlobalStyle.generic} />
+        <ProjectSection name="Web projects" sectionContent={webProjects} globalStyles={GlobalStyle.generic}/>
         {/* <ProjectSection name="Game projects"/>
         <ProjectSection name="DIY projects"/> */}
-        <Contact />
+        <Contact globalStyles={GlobalStyle.generic}/>
       </View>
       <FooterComponent />
     </View>

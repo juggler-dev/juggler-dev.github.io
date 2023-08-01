@@ -3,10 +3,12 @@ import { StyleSheet } from "react-native";
 const GENERIC_FONT = "Quicksand-Regular";
 
 export default StyleSheet.create({
-  siteHeader: {
-    color: "dodgerblue",
+  generic: {
+    color: "white",
     fontFamily: GENERIC_FONT,
-    fontSize: '16px',
+    fontSize: "16px",
+  },
+  siteHeader: {
     textTransform: "uppercase",
   },
   title: {
@@ -14,5 +16,5 @@ export default StyleSheet.create({
   },
   body: {
     fontFamily: GENERIC_FONT,
-  }
+  },
 });
