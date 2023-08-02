@@ -6,6 +6,7 @@ import GlobalStyle from "../utils/GlobalStyle";
 
 import HeaderComponent from "../components/Header/HeaderComponent";
 import FooterComponent from "../components/Footer/FooterComponent";
+import Hero from "../components/Sections/Hero";
 import AboutSection from "../components/Sections/AboutSection";
 import Contact from "../components/Sections/Contact";
 
@@ -35,7 +36,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <HeaderComponent globalstyles={GlobalStyle.generic}/>
       <View style={styles.content}>
-        <AboutSection globalStyles={GlobalStyle.generic} />
+        <Hero />
         <ProjectSection name="Web projects" sectionContent={webProjects} globalStyles={GlobalStyle.generic}/>
         {/* <ProjectSection name="Game projects"/>
         <ProjectSection name="DIY projects"/> */}
