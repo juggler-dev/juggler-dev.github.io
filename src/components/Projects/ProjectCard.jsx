@@ -11,19 +11,17 @@ export default function ProjectCard({
   projectImageUrl,
   tags,
 }) {
-  const imageUrl = { uri: projectImageUrl };
 
   const styles = StyleSheet.create({
     container: {
-      flex: 1,
       flexDirection: "row",
-      gap: 20,
+      gap: '10px',
       border: "1px solid grey",
       borderRadius: "16px",
     },
     projectImage: {
-      width: "300px",
-      height: "300px",
+      width: '300px',
+      height: '300px',
       borderRadius: "16px",
     },
     backgroundImage: {
@@ -33,29 +31,30 @@ export default function ProjectCard({
     content: {
       flex: 1,
       flexDirection: "column",
-      padding: "20px",
-      gap: "20px",
+      paddingVertical: '10px',
+      paddingHorizontal: '15px',
+      gap: '10px',
     },
     tagsContainer: {
       display: "flex",
       flexDirection: "row",
+      flexWrap: 'wrap',
+      rowGap: '5px'
     },
     title: {
-      fontSize: "24px",
+      fontSize: "36px",
       color: "white",
     },
     description: {
-      color: "white",
-    },
-    text: {
-      flex: 1,
+      fontSize: '14px',
+      textAlign: 'justify',
     },
   });
 
   return (
     <View className="projectCardContainer" style={styles.container}>
       <ImageBackground
-        source={imageUrl}
+        source={projectImageUrl}
         resizeMode="cover"
         style={styles.projectImage}
         imageStyle={styles.backgroundImage}

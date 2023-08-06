@@ -14,7 +14,7 @@ export default function Tag({ content, color }) {
       borderRadius: "8px",
     },
     text: {
-      padding: "2px",
+      fontSize: '14px'
     },
   });
 

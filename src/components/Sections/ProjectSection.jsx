@@ -1,41 +1,48 @@
-import { StyleSheet, View, Dimensions } from "react-native-web";
-
-import GlobalStyle from "../../utils/GlobalStyle";
+import { StyleSheet, View } from "react-native-web";
 
 import SectionHeader from "./SectionHeader";
 import ProjectCard from "../Projects/ProjectCard";
 
 export default function ProjectSection({ name, sectionContent }) {
   const styles = StyleSheet.create({
+    container: {
+    },
     cardsContainer: {
       display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      padding: 20,
+      flexDirection: "row",
+      paddingVertical: "100px",
+      paddingHorizontal: "50px",
+      gap: "20px",
     },
-    cardsContent: {
-      display: "flex",
-      maxWidth: "60%",
-      gap: 20,
+    columnContainer: {
+      flex: "1",
+      gap: "20px",
     },
   });
 
+  //Data rework
+  const sectionContentData = sectionContent.map((project) => {
+    return (
+      <ProjectCard
+        projectTitle={project.projectTitle}
+        projectContent={project.projectContent}
+        projectImageUrl={project.projectImageUrl}
+        tags={project.tags}
+      />
+    );
+  });
+
+  //Data Split
+  const midIndex = Math.ceil(sectionContentData.length / 2);
+  const firstHalf = sectionContentData.slice(0, midIndex);
+  const secondHalf = sectionContentData.slice(midIndex);
+
   return (
-    <View>
+    <View style={styles.container}>
       <SectionHeader title={name} />
       <View style={styles.cardsContainer}>
-        <View style={styles.cardsContent}>
-          {sectionContent.map((project) => {
-            return (
-              <ProjectCard
-                projectTitle={project.projectTitle}
-                projectContent={project.projectContent}
-                projectImageUrl={project.projectImageUrl}
-                tags={project.tags}
-              />
-            );
-          })}
-        </View>
+        <View style={styles.columnContainer}>{firstHalf}</View>
+        <View style={styles.columnContainer}>{secondHalf}</View>
       </View>
     </View>
   );
