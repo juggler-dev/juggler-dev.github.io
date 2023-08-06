@@ -1,9 +1,5 @@
-import { StyleSheet, View, Text } from "react-native";
-
-import GlobalStyle from "../../utils/GlobalStyle";
-
 export default function Contact() {
-  const styles = StyleSheet.create({
+  const styles = {
     container: {
       backgroundColor: "#176CC0",
       display: "flex",
@@ -19,17 +15,17 @@ export default function Contact() {
     },
     message: {
     },
-  });
+  };
 
   return (
-    <View className="aboutContainer" style={styles.container}>
-      <View className="content" style={styles.content}>
-        <Text style={[GlobalStyle.generic, styles.title]}>Contact Me</Text>
-        <Text style={[GlobalStyle.generic, styles.message]}>
+    <div className="aboutContainer" style={styles.container}>
+      <div className="content" style={styles.content}>
+        <p style={styles.title}>Contact Me</p>
+        <p style={styles.message}>
           Feel free to contact me to gonzalo.santacruzm@gmail.com. You can
           follow me in my social media too!
-        </Text>
-      </View>
-    </View>
+        </p>
+      </div>
+    </div>
   );
 }

@@ -1,12 +1,9 @@
-import { StyleSheet, View } from "react-native-web";
-
 import SectionHeader from "./SectionHeader";
 import ProjectCard from "../Projects/ProjectCard";
 
 export default function ProjectSection({ name, sectionContent }) {
-  const styles = StyleSheet.create({
-    container: {
-    },
+  const styles = {
+    container: {},
     cardsContainer: {
       display: "flex",
       flexDirection: "row",
@@ -18,12 +15,13 @@ export default function ProjectSection({ name, sectionContent }) {
       flex: "1",
       gap: "20px",
     },
-  });
+  };
 
   //Data rework
   const sectionContentData = sectionContent.map((project) => {
     return (
       <ProjectCard
+        key={project.projectTitle}
         projectTitle={project.projectTitle}
         projectContent={project.projectContent}
         projectImageUrl={project.projectImageUrl}
@@ -38,12 +36,12 @@ export default function ProjectSection({ name, sectionContent }) {
   const secondHalf = sectionContentData.slice(midIndex);
 
   return (
-    <View style={styles.container}>
+    <div style={styles.container}>
       <SectionHeader title={name} />
-      <View style={styles.cardsContainer}>
-        <View style={styles.columnContainer}>{firstHalf}</View>
-        <View style={styles.columnContainer}>{secondHalf}</View>
-      </View>
-    </View>
+      <div style={styles.cardsContainer}>
+        <div style={styles.columnContainer}>{firstHalf}</div>
+        <div style={styles.columnContainer}>{secondHalf}</div>
+      </div>
+    </div>
   );
 }

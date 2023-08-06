@@ -1,9 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
-
-import GlobalStyle from "../../utils/GlobalStyle";
-
 export default function FooterComponent() {
-  const styles = StyleSheet.create({
+  const styles = {
     container: {
       height: 50,
       backgroundColor: "#252525",
@@ -14,11 +10,11 @@ export default function FooterComponent() {
     text: {
       color: "dodgerblue",
     },
-  });
+  };
 
   return (
-    <View style={styles.container}>
-      <Text style={[GlobalStyle.generic, styles.text]}>Copyright © 2023 by Diego Santa Cruz</Text>
-    </View>
+    <div style={styles.container}>
+      <p style={styles.text}>Copyright © 2023 by Diego Santa Cruz</p>
+    </div>
   );
 }

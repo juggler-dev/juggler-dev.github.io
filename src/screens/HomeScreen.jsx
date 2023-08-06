@@ -1,25 +1,18 @@
-import { StyleSheet, View } from "react-native";
-
-import { useFonts } from "expo-font";
-
 import GlobalStyle from "../utils/GlobalStyle";
 
 import HeaderComponent from "../components/Header/HeaderComponent";
 import FooterComponent from "../components/Footer/FooterComponent";
 import Hero from "../components/Sections/Hero";
-import AboutSection from "../components/Sections/AboutSection";
 import Contact from "../components/Sections/Contact";
 
 import ProjectSection from "../components/Sections/ProjectSection";
 
-import { webProjects } from "../content/webProjects";
+import WebProjects from "../content/webProjects";
+import GameProjects from "../content/gameProjects";
+import DIYProjects from "../content/diyProjects";
 
 export default function HomeScreen() {
-  const [fontsLoaded] = useFonts({
-    "Quicksand-regular": require("../../assets/fonts/Quicksand-Regular.ttf"),
-  });
-
-  const styles = StyleSheet.create({
+  const styles = {
     container: {
       flex: 1,
     },
@@ -30,19 +23,19 @@ export default function HomeScreen() {
     contentText: {
       fontSize: 20,
     },
-  });
+  };
 
   return (
-    <View style={styles.container}>
-      <HeaderComponent globalstyles={GlobalStyle.generic}/>
-      <View style={styles.content}>
+    <div style={styles.container}>
+      <HeaderComponent globalstyles={GlobalStyle.generic} />
+      <div style={styles.content}>
         <Hero />
-        <ProjectSection name="Web projects" sectionContent={webProjects} globalStyles={GlobalStyle.generic}/>
-        {/* <ProjectSection name="Game projects"/>
-        <ProjectSection name="DIY projects"/> */}
-        <Contact globalStyles={GlobalStyle.generic}/>
-      </View>
+        <ProjectSection name="Web projects" sectionContent={WebProjects} />
+        <ProjectSection name="Game projects" sectionContent={GameProjects} />
+        <ProjectSection name="DIY projects" sectionContent={DIYProjects} />
+        <Contact globalStyles={GlobalStyle.generic} />
+      </div>
       <FooterComponent />
-    </View>
+    </div>
   );
 }

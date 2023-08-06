@@ -1,9 +1,5 @@
-import { View, Text, StyleSheet } from "react-native-web";
-
-import GlobalStyle from "../../utils/GlobalStyle";
-
 export default function SectionHeader({ title }) {
-  const styles = StyleSheet.create({
+  const styles = {
     container: {
       backgroundColor: "rgba(25, 25, 25, 0.95)",
       display: "flex",
@@ -18,16 +14,16 @@ export default function SectionHeader({ title }) {
       paddingVertical: "20px",
       fontSize: "50px",
     },
-  });
+  };
 
   return (
-    <View className="sectionHeaderContainer" style={styles.container}>
-      <Text
+    <div className="sectionHeaderContainer" style={styles.container}>
+      <p 
         className="sectionHeaderTitle"
-        style={[GlobalStyle.generic, styles.title]}
+        style={styles.title}
       >
         {title}
-      </Text>
-    </View>
+      </p>
+    </div>
   );
 }

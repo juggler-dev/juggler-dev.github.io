@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+body p {
+  margin: 0;
+  color: white;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}

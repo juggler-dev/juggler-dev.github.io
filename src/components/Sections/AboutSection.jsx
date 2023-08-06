@@ -1,9 +1,7 @@
-import { StyleSheet, View, Text, Image } from "react-native";
-
 import GlobalStyle from "../../utils/GlobalStyle";
 
 export default function AboutSection() {
-  const styles = StyleSheet.create({
+  const styles = {
     container: {
       flex: 1,
       flexDirection: "column",
@@ -33,18 +31,18 @@ export default function AboutSection() {
       textAlign: "justify",
       color: "white",
     },
-  });
+  };
 
   return (
-    <View className="aboutContainer" style={styles.container}>
-      <View style={styles.imageTextContainer}>
-        <Image
+    <div className="aboutContainer" style={styles.container}>
+      <div style={styles.imageTextContainer}>
+        {/* <Image
           source={require("../../../assets/photos/diego_portfolio_portrait.jpg")}
           style={{ width: "480px", height: "350px", borderRadius: 16 }}
-        ></Image>
-        <View className="content" style={styles.content}>
-          <Text style={[GlobalStyle.generic, styles.title]}>Hello there!</Text>
-          <Text style={[GlobalStyle.generic, styles.message]}>
+        ></Image> */}
+        <div className="content" style={styles.content}>
+          <p style={styles.title}>Hello there!</p>
+          <p style={styles.message}>
             Hello! I'm Diego, a fullstack developer and game designer/programmer
             from Peru. I'm currently seeking job opportunities and I'd like to
             showcase my work to you. I graduated with distinction from Langara
@@ -56,9 +54,9 @@ export default function AboutSection() {
             well as well-defined projects. If you have any questions or
             comments, please feel free to contact me. You can find my resume
             available here.
-          </Text>
-        </View>
-      </View>
-    </View>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }

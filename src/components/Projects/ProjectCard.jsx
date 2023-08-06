@@ -1,8 +1,3 @@
-import { StyleSheet } from "react-native";
-import { View, Text, ImageBackground } from "react-native-web";
-
-import GlobalStyle from "../../utils/GlobalStyle";
-
 import Tag from "./Tag";
 
 export default function ProjectCard({
@@ -12,7 +7,7 @@ export default function ProjectCard({
   tags,
 }) {
 
-  const styles = StyleSheet.create({
+  const styles = {
     container: {
       flexDirection: "row",
       gap: '10px',
@@ -49,25 +44,25 @@ export default function ProjectCard({
       fontSize: '14px',
       textAlign: 'justify',
     },
-  });
+  };
 
   return (
-    <View className="projectCardContainer" style={styles.container}>
-      <ImageBackground
+    <div className="projectCardContainer" style={styles.container}>
+      {/* <img
         source={projectImageUrl}
         resizeMode="cover"
         style={styles.projectImage}
         imageStyle={styles.backgroundImage}
-      ></ImageBackground>
-      <View className="tagsDescriptionContainer" style={styles.content}>
-        <Text style={[GlobalStyle.generic, styles.title]}>{projectTitle}</Text>
-        <View className="TagsContainer" style={styles.tagsContainer}>
+      > */}
+      <div className="tagsDescriptionContainer" style={styles.content}>
+        <p style={styles.title}>{projectTitle}</p>
+        <div className="TagsContainer" style={styles.tagsContainer}>
           {tags.map((tag) => {
-            return <Tag content={tag.tagName} color={tag.tagColor} />;
+            return <Tag key={tag.tagName} content={tag.tagName} color={tag.tagColor} />;
           })}
-        </View>
-        <Text style={[GlobalStyle.generic, styles.description]}>{projectContent}</Text>
-      </View>
-    </View>
+        </div>
+        <p style={styles.description}>{projectContent}</p>
+      </div>
+    </div>
   );
 }

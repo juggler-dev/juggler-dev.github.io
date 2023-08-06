@@ -1,19 +1,17 @@
-import { ImageBackground, StyleSheet, Text, View } from "react-native-web";
-
-import GlobalStyle from "../../utils/GlobalStyle";
+import heroSectionImage from "../../assets/hero/heroSectionImage_dark.jpg"
 
 export default function Hero() {
-  const styles = StyleSheet.create({
+  const styles = {
     container: {
-      height: "900px",
-    },
-    heroImage: {
-      flex: "1",
-      borderRadius: "16px",
-      flexDirection: "row",
+      display: 'flex',
+      height: '900px',
+      backgroundImage: `url(${heroSectionImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
     },
     columnContainer: {
-      flex: "1",
+      display: 'flex',
+      flex: 1,
       flexDirection: "column",
     },
     textContainer: {
@@ -27,29 +25,21 @@ export default function Hero() {
     heroSectionMessage: {
       fontSize: "24px",
     },
-  });
+  };
 
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={require("../../../assets/hero/heroSectionImage_dark.jpg")}
-        resizeMode="cover"
-        style={styles.heroImage}
-      >
-        <View style={styles.columnContainer}></View>
-        <View style={[styles.columnContainer, styles.textContainer]}>
-          <Text style={[GlobalStyle.generic, styles.heroSectionTitle]}>
-            Hello there!
-          </Text>
-          <Text style={[GlobalStyle.generic, styles.heroSectionMessage]}>
-            Hi! I'm Diego, a fullstack developer and game designer/programmer
-            from Peru. In my portfolio, you can explore some of the web and game
-            projects I have worked on, both individually and as part of a
-            team.If you have any questions or comments, please feel free to
-            contact me. You can find my resume available here.
-          </Text>
-        </View>
-      </ImageBackground>
-    </View>
+    <div style={styles.container}>
+      <div style={styles.columnContainer}></div>
+      <div style={{...styles.columnContainer, ...styles.textContainer}}>
+        <p style={styles.heroSectionTitle}>Hello there!</p>
+        <p style={styles.heroSectionMessage}>
+          Hi! I'm Diego, a fullstack developer and game designer/programmer from
+          Peru. In my portfolio, you can explore some of the web and game
+          projects I have worked on, both individually and as part of a team.If
+          you have any questions or comments, please feel free to contact me.
+          You can find my resume available here.
+        </p>
+      </div>
+    </div>
   );
 }

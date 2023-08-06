@@ -1,62 +1,52 @@
-import { StyleSheet, Text, View, Pressable } from "react-native";
-
-import HeaderNavPressable from "./HeaderNavPressable";
-
-import { Link } from "react-router-native";
+import { Link } from "react-router-dom";
 
 import GlobalStyle from "../../utils/GlobalStyle";
 
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons/faEarthAmericas";
 import { faGamepad } from "@fortawesome/free-solid-svg-icons/faGamepad";
 
-export default function HeaderComponent({ navigation }) {
-  const styles = StyleSheet.create({
+import HeaderNav from "./HeaderNav";
+
+export default function HeaderComponent() {
+  const styles = {
     container: {
-      backgroundColor: "rgba(25, 25, 25, 0.95)",
+      backgroundColor: 'rgba(25, 25, 25, 0.95)',
       display: "flex",
       flexDirection: "row",
       alignItems: "center",
-      paddingHorizontal: "30px",
-      paddingVertical: "10px",
+      padding: "20px 30px",
       gap: "40px",
-      borderBottomWidth: "1px",
-      borderBottomColor: "silver",
+      borderBottom: '1px solid silver',
+      position: 'fixed',
+      top: 0,
+      width: '100%',
     },
     nameText: {
       fontSize: "36px",
+      textTransform: 'uppercase'
     },
-  });
+  };
 
   return (
-    <View style={styles.container}>
-      {/* <Pressable
-        onPress={() => {
-          navigation.navigate("HomeScreen");
-        }}
-        style={[GlobalStyle.generic, styles.nameText]}
-      >
-        Diego Santa Cruz
-      </Pressable> */}
-      <Link to='/'>
-        <Text style={[GlobalStyle.generic, styles.nameText]}>
-          Diego Santa Cruz
-        </Text>
+    <div style={styles.container}>
+      <Link to="/">
+        <p style={styles.nameText}>Diego Santa Cruz</p>
       </Link>
       <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
         <div style={{ display: "flex", flexDirection: "row", gap: "5px" }}>
-          <FontAwesomeIcon icon={faGamepad} color="white" size="24px" />
+          <FontAwesomeIcon icon={faGamepad} color="white" />
 
-          <HeaderNavPressable pressableLabel={"Gaming Projects"} />
+          <HeaderNav pressableLabel={"Gaming Projects"} />
         </div>
         <div style={{ display: "flex", flexDirection: "row", gap: "5px" }}>
-          <FontAwesomeIcon icon={faEarthAmericas} color="white" size="20px" />
-          <HeaderNavPressable pressableLabel={"Web Projects"} />
+          <FontAwesomeIcon icon={faEarthAmericas} color="white" />
+          <HeaderNav pressableLabel={"Web Projects"} />
         </div>
         <div style={{ display: "flex", flexDirection: "row", gap: "5px" }}>
-          <HeaderNavPressable pressableLabel={"About"} />
+          <HeaderNav pressableLabel={"About"} />
         </div>
       </div>
-    </View>
+    </div>
   );
 }

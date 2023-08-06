@@ -1,4 +1,4 @@
-const calculatedRiskThumbnail = require("../../assets/projectThumbnails/calculatedRiskThumbnail.jpg");
+const calculatedRiskThumbnail = require("../assets/projectThumbnails/calculatedRiskThumbnail.jpg");
 
 export default [
   {

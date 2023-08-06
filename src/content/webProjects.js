@@ -1,9 +1,9 @@
-const firstStopThumbnail = require("../../assets/projectThumbnails/firstStopThumbnail.jpg");
-const getATatThumbnail = require("../../assets/projectThumbnails/getatatThumbnail.jpg");
-const tieInThumbnail = require("../../assets/projectThumbnails/tieinThumbnail.jpg");
-const crowdEaseThumbnail = require("../../assets/projectThumbnails/crowdeaseThumbnail.jpg");
-const portfolioThumbnail = require("../../assets/projectThumbnails/portfolioThumbnail.jpg");
-const threedprintThumbnail = require("../../assets/projectThumbnails/3dprintThumbnail.jpg");
+const firstStopThumbnail = require("../assets/projectThumbnails/firstStopThumbnail.jpg");
+const getATatThumbnail = require("../assets/projectThumbnails/getatatThumbnail.jpg");
+const tieInThumbnail = require("../assets/projectThumbnails/tieinThumbnail.jpg");
+const crowdEaseThumbnail = require("../assets/projectThumbnails/crowdeaseThumbnail.jpg");
+const portfolioThumbnail = require("../assets/projectThumbnails/portfolioThumbnail.jpg");
+const threedprintThumbnail = require("../assets/projectThumbnails/3dprintThumbnail.jpg");
 
 export default [
   {

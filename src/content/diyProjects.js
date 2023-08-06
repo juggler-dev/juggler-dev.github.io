@@ -1,4 +1,4 @@
-const fabAcademyThumbnail = require("../../assets/projectThumbnails/fabacademyThumbnail.jpg");
+const fabAcademyThumbnail = require("../assets/projectThumbnails/fabacademyThumbnail.jpg");
 
 export default [
   {

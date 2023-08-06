@@ -1,11 +1,7 @@
-import { View, Text, StyleSheet } from "react-native-web";
-
-import GlobalStyle from "../../utils/GlobalStyle";
-
 import { tagColorCheck } from "../../utils/utils";
 
 export default function Tag({ content, color }) {
-  const styles = StyleSheet.create({
+  const styles = {
     container: {
       display: "flex",
       backgroundColor: tagColorCheck(color),
@@ -16,11 +12,11 @@ export default function Tag({ content, color }) {
     text: {
       fontSize: '14px'
     },
-  });
+  };
 
   return (
-    <View style={styles.container}>
-      <Text style={[GlobalStyle.generic, styles.text]}>{content}</Text>
-    </View>
+    <div style={styles.container}>
+      <p style={styles.text}>{content}</p>
+    </div>
   );
 }
