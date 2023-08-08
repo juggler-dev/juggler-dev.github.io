@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.87b10c78.css",
+    "main.js": "/portfolio/static/js/main.152c0974.js",
+    "static/media/heroSectionImage_dark.jpg": "/portfolio/static/media/heroSectionImage_dark.fb2f5010fed9a0bdd5ae.jpg",
+    "static/media/portfolioThumbnail.jpg": "/portfolio/static/media/portfolioThumbnail.529db1a9111adf8e2035.jpg",
+    "static/media/calculatedRiskThumbnail.jpg": "/portfolio/static/media/calculatedRiskThumbnail.045843fb8658e9b964f7.jpg",
+    "static/media/getatatThumbnail.jpg": "/portfolio/static/media/getatatThumbnail.569155fc318de10aaee3.jpg",
+    "static/media/firstStopThumbnail.jpg": "/portfolio/static/media/firstStopThumbnail.6bcacff017b33be3809a.jpg",
+    "static/media/fabacademyThumbnail.jpg": "/portfolio/static/media/fabacademyThumbnail.a3550fb63f3ef76f66f7.jpg",
+    "static/media/crowdeaseThumbnail.jpg": "/portfolio/static/media/crowdeaseThumbnail.8ab4c198a2df0ef6465f.jpg",
+    "static/media/tieinThumbnail.jpg": "/portfolio/static/media/tieinThumbnail.077402822d19815b48ff.jpg",
+    "static/media/3dprintThumbnail.jpg": "/portfolio/static/media/3dprintThumbnail.65c0772e9fc381428038.jpg",
+    "index.html": "/portfolio/index.html",
+    "main.87b10c78.css.map": "/portfolio/static/css/main.87b10c78.css.map",
+    "main.152c0974.js.map": "/portfolio/static/js/main.152c0974.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.87b10c78.css",
+    "static/js/main.152c0974.js"
+  ]
+}
