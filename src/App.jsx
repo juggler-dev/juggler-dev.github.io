@@ -5,7 +5,7 @@ import HomeScreen from "./screens/HomeScreen";
 export default function App() {
   return (
     <Routes>
-      <Route path="/" exact element={<HomeScreen />} />
+      <Route exact path="/"  element={<HomeScreen />} />
     </Routes>
   );
 }
