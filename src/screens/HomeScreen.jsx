@@ -33,7 +33,7 @@ export default function HomeScreen() {
         <ProjectSection name="Web projects" sectionContent={WebProjects} />
         <ProjectSection name="Game projects" sectionContent={GameProjects} />
         <ProjectSection name="DIY projects" sectionContent={DIYProjects} />
-        <Contact globalStyles={GlobalStyle.generic} />
+        {/* <Contact globalStyles={GlobalStyle.generic} /> */}
       </div>
       <FooterComponent />
     </div>

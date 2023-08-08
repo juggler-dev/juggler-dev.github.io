@@ -1,3 +1,8 @@
+import {
+  GithubFilled,
+  LinkedinFilled,
+} from '@ant-design/icons';
+
 export default function Contact() {
   const styles = {
     container: {
@@ -7,7 +12,6 @@ export default function Contact() {
       alignItems: "center",
     },
     content: {
-      width: "60%",
       alignItems: "center",
     },
     title: {
@@ -21,10 +25,10 @@ export default function Contact() {
     <div className="aboutContainer" style={styles.container}>
       <div className="content" style={styles.content}>
         <p style={styles.title}>Contact Me</p>
-        <p style={styles.message}>
-          Feel free to contact me to gonzalo.santacruzm@gmail.com. You can
-          follow me in my social media too!
-        </p>
+        <div className="socialIconsContainer" style={{display: 'flex', justifyContent: 'center', gap: '20px', padding: '20px'}}>
+          <GithubFilled style={{ fontSize: '32px', color: 'white' }}/>
+          <LinkedinFilled style={{ fontSize: '32px', color: 'white' }}/>
+        </div>
       </div>
     </div>
   );

@@ -33,11 +33,7 @@ export default function Hero() {
       <div style={{...styles.columnContainer, ...styles.textContainer}}>
         <p style={styles.heroSectionTitle}>Hello there!</p>
         <p style={styles.heroSectionMessage}>
-          Hi! I'm Diego, a fullstack developer and game designer/programmer from
-          Peru. In my portfolio, you can explore some of the web and game
-          projects I have worked on, both individually and as part of a team.If
-          you have any questions or comments, please feel free to contact me.
-          You can find my resume available here.
+          Hi! I'm Diego, a fullstack developer and game designer/programmer based in Vancouver.
         </p>
       </div>
     </div>
