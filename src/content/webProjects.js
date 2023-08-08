@@ -15,6 +15,13 @@ export default [
       { tagName: "Figma", tagColor: "blueTag" },
       { tagName: "UX", tagColor: "purpleTag" },
     ],
+    redirects: [
+      {
+        buttonMessage: "To prototype",
+        redirectURL:
+          "https://www.figma.com/proto/ZBkn44Nway6Oew5WQzSVbz/First-Stop?page-id=0%3A1&node-id=1121-15325&starting-point-node-id=1121%3A15325&mode=design&t=6IEME8rZWBG3wWix-1",
+      },
+    ],
   },
   {
     projectTitle: "Get a Tat",
@@ -28,6 +35,12 @@ export default [
       { tagName: "Javascript", tagColor: "greenTag" },
       { tagName: "Firebase", tagColor: "redTag" },
       { tagName: "PWA", tagColor: "purpleTag" },
+    ],
+    redirects: [
+      {
+        buttonMessage: "To repository",
+        redirectURL: "https://github.com/juggler-dev/webapp_html_get-a-tat",
+      },
     ],
   },
   {
@@ -45,6 +58,16 @@ export default [
       { tagName: "Netlify", tagColor: "purpleTag" },
       { tagName: "Railway", tagColor: "purpleTag" },
     ],
+    redirects: [
+      {
+        buttonMessage: "To repository",
+        redirectURL: "https://github.com/juggler-dev/tie-in-app",
+      },
+      {
+        buttonMessage: "To site",
+        redirectURL: "https://tiein.ca/",
+      },
+    ],
   },
   {
     projectTitle: "Crowdease",
@@ -59,6 +82,16 @@ export default [
       { tagName: "Express", tagColor: "yellowTag" },
       { tagName: "MongoDB", tagColor: "redTag" },
       { tagName: "AWS EC2", tagColor: "purpleTag" },
+    ],
+    redirects: [
+      {
+        buttonMessage: "To repository",
+        redirectURL: "https://github.com/juggler-dev/mobile-reactnative-crowdease-app-frontend",
+      },
+      {
+        buttonMessage: "To site",
+        redirectURL: "https://crowdease.ca/",
+      },
     ],
   },
   {
@@ -83,7 +116,13 @@ export default [
       { tagName: "Figma", tagColor: "blueTag" },
       { tagName: "Javascript", tagColor: "greenTag" },
       { tagName: "ReactJs", tagColor: "orangeTag" },
-      { tagName: 'Ant Design', tagColor: 'yellowTag'}
+      { tagName: "Ant Design", tagColor: "yellowTag" },
+    ],
+    redirects: [
+      {
+        buttonMessage: "To be released",
+        redirectURL: "#",
+      },
     ],
   },
 ];

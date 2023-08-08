@@ -1,67 +1,114 @@
+import { useState } from "react";
+
 import Tag from "./Tag";
+import RedirectButton from "../Generic/RedirectButton";
 
 export default function ProjectCard({
   projectTitle,
   projectContent,
   projectImageUrl,
   tags,
+  redirects,
 }) {
+  const [isHover, setIsHover] = useState(false);
+
+  const mouseHoverHandler = () => {
+    setIsHover(true);
+  };
+  const mouseNotHoverHandler = () => {
+    setIsHover(false);
+  };
 
   const styles = {
     container: {
+      display: "flex",
       flexDirection: "row",
-      gap: '10px',
-      border: "1px solid grey",
+      gap: "10px",
+      borderWidth: "2px",
+      borderStyle: "solid",
+      borderColor: isHover ? "dodgerblue" : "silver",
       borderRadius: "16px",
     },
-    projectImage: {
-      width: '300px',
-      height: '300px',
-      borderRadius: "16px",
-    },
-    backgroundImage: {
+    imageThumbnail: {
+      width: "300px",
+      height: "300px",
       borderTopLeftRadius: "16px",
       borderBottomLeftRadius: "16px",
     },
     content: {
+      display: "flex",
       flex: 1,
       flexDirection: "column",
-      paddingVertical: '10px',
-      paddingHorizontal: '15px',
-      gap: '10px',
+      padding: "10px 15px",
+    },
+    descriptionContainer: {
+      display: "flex",
+      flex: 1,
+      flexDirection: "column",
+      gap: "10px",
     },
     tagsContainer: {
       display: "flex",
       flexDirection: "row",
-      flexWrap: 'wrap',
-      rowGap: '5px'
+      flexWrap: "wrap",
+      gap: "5px",
     },
     title: {
       fontSize: "36px",
-      color: "white",
     },
     description: {
-      fontSize: '14px',
-      textAlign: 'justify',
+      fontSize: "14px",
+      textAlign: "justify",
     },
+    redirectContainer: {
+      display: "flex",
+      height: "50px",
+      alignItems: "center",
+      justifyContent: "flex-end",
+      columnGap: '10px'
+    },
+    redirectContent: {
+      display: "flex",
+      gap: '10px'
+    }
   };
 
   return (
-    <div className="projectCardContainer" style={styles.container}>
-      {/* <img
-        source={projectImageUrl}
-        resizeMode="cover"
-        style={styles.projectImage}
-        imageStyle={styles.backgroundImage}
-      > */}
-      <div className="tagsDescriptionContainer" style={styles.content}>
-        <p style={styles.title}>{projectTitle}</p>
-        <div className="TagsContainer" style={styles.tagsContainer}>
-          {tags.map((tag) => {
-            return <Tag key={tag.tagName} content={tag.tagName} color={tag.tagColor} />;
-          })}
+    <div
+      className="projectCardContainer"
+      style={styles.container}
+      onMouseEnter={mouseHoverHandler}
+      onMouseLeave={mouseNotHoverHandler}
+    >
+      <img src={projectImageUrl} style={styles.imageThumbnail} />
+      <div className="cardContent" style={styles.content}>
+        <div style={styles.descriptionContainer}>
+          <p style={styles.title}>{projectTitle}</p>
+          <div className="TagsContainer" style={styles.tagsContainer}>
+            {tags.map((tag) => {
+              return (
+                <Tag
+                  key={tag.tagName}
+                  content={tag.tagName}
+                  color={tag.tagColor}
+                />
+              );
+            })}
+          </div>
+          <p style={styles.description}>{projectContent}</p>
         </div>
-        <p style={styles.description}>{projectContent}</p>
+        <div
+          className="redirectContainer"
+          style={styles.redirectContainer}
+        >
+          {isHover && (
+            <div className="redirectContent" style={styles.redirectContent}>
+              {redirects?.map((redirectButton) => {
+                return <RedirectButton linkURL={redirectButton.redirectURL} buttonText={redirectButton.buttonMessage} />;
+              })}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

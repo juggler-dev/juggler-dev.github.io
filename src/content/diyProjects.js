@@ -9,5 +9,11 @@ export default [
     tags: [
       { tagName: "Other", tagColor: "orangeTag" },
     ],
+    redirects: [
+      {
+        buttonMessage: "To my FabAcademy site",
+        redirectURL: "https://fabacademy.org/2019/labs/tecsup/students/diego-meono/",
+      },
+    ],
   },
 ];

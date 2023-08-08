@@ -7,12 +7,13 @@ export default function ProjectSection({ name, sectionContent }) {
     cardsContainer: {
       display: "flex",
       flexDirection: "row",
-      paddingVertical: "100px",
-      paddingHorizontal: "50px",
-      gap: "20px",
+      padding: '100px 50px',
+      gap: '20px',
     },
     columnContainer: {
+      display: 'flex',
       flex: "1",
+      flexDirection: 'column',
       gap: "20px",
     },
   };
@@ -26,6 +27,7 @@ export default function ProjectSection({ name, sectionContent }) {
         projectContent={project.projectContent}
         projectImageUrl={project.projectImageUrl}
         tags={project.tags}
+        redirects={project.redirects}
       />
     );
   });
@@ -36,12 +38,12 @@ export default function ProjectSection({ name, sectionContent }) {
   const secondHalf = sectionContentData.slice(midIndex);
 
   return (
-    <div style={styles.container}>
+    <section style={styles.container}>
       <SectionHeader title={name} />
       <div style={styles.cardsContainer}>
         <div style={styles.columnContainer}>{firstHalf}</div>
         <div style={styles.columnContainer}>{secondHalf}</div>
       </div>
-    </div>
+    </section>
   );
 }

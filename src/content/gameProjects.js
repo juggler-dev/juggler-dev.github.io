@@ -10,5 +10,11 @@ export default [
       { tagName: "Unity", tagColor: "blueTag" },
       { tagName: "C#", tagColor: "greenTag" },
     ],
+    redirects: [
+      {
+        buttonMessage: "To itch.io site",
+        redirectURL: "https://jasonxxr.itch.io/calculated-risk",
+      },
+    ],
   },
 ];

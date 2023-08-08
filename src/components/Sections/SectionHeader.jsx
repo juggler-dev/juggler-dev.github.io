@@ -1,17 +1,15 @@
 export default function SectionHeader({ title }) {
   const styles = {
     container: {
-      backgroundColor: "rgba(25, 25, 25, 0.95)",
+      backgroundColor: "rgb(25, 25, 25)",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      borderTopWidth: '1px',
-      borderTopColor: 'white',
-      borderBottomWidth: '1px',
-      borderBottomColor: 'white',
+      borderTop: '1px solid silver',
+      borderBottom: '1px solid silver',
+      padding: '20px 0px'
     },
     title: {
-      paddingVertical: "20px",
       fontSize: "50px",
     },
   };
