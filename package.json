@@ -1,7 +1,7 @@
 {
   "name": "portfolio_website",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "main": "node_modules/expo/AppEntry.js",
   "homepage": "http://juggler-dev.github.io/portfolio",
   "scripts": {
